@@ -2,7 +2,7 @@
 
 **Live site:** [PASTE LINK HERE]
 
-![Landing page preview](images\landing_page.png)
+![Landing page preview](images/landing_page.png)
 
 ## About
 
