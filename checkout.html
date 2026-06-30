@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Checkout — Makhosi Shabangu</title>
+<meta name="description" content="Review your order and complete checkout.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,500;0,600;1,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a href="index.html" class="brand">Makhosi <span>Shabangu</span></a>
+    <nav class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#about">About</a>
+      <a href="index.html#services">Services</a>
+      <a href="products.html">Shop</a>
+      <a href="index.html#contact">Booking</a>
+    </nav>
+    <div style="display:flex; align-items:center; gap:16px;">
+      <span class="nav-cart" style="opacity:0.6; cursor:default;">
+        <span>Cart</span>
+        <span id="cart-count">0</span>
+      </span>
+    </div>
+  </div>
+</header>
+
+<div class="demo-badge">Demo checkout — no real charge will be made</div>
+
+<section style="padding-top:48px;">
+  <div class="wrap">
+
+    <div class="checkout-stepper" id="stepper">
+      <div class="step-item active" data-step="1">
+        <span class="step-bead"></span>
+        <span>Review</span>
+      </div>
+      <div class="step-rule"></div>
+      <div class="step-item" data-step="2">
+        <span class="step-bead"></span>
+        <span>Payment</span>
+      </div>
+      <div class="step-rule"></div>
+      <div class="step-item" data-step="3">
+        <span class="step-bead"></span>
+        <span>Confirmation</span>
+      </div>
+    </div>
+
+    <!-- STEP 1: REVIEW -->
+    <div class="checkout-panel" id="panel-1">
+      <div class="checkout-grid">
+        <div>
+          <h2 style="font-size:1.5rem; margin-bottom:24px;">Order review</h2>
+          <div id="reviewItems" class="review-items"></div>
+          <a href="products.html" id="emptyCartLink" class="btn btn-outline" style="display:none; margin-top:8px;">Back to shop</a>
+        </div>
+        <aside class="checkout-summary">
+          <h3 style="font-size:1.1rem; margin-bottom:18px;">Order total</h3>
+          <div class="summary-row"><span>Subtotal</span><span id="summarySubtotal">R0.00</span></div>
+          <div class="summary-row"><span>Delivery / collection</span><span>Arranged via WhatsApp</span></div>
+          <div class="summary-row summary-total"><span>Total</span><span id="summaryTotal">R0.00</span></div>
+          <button class="btn btn-primary" style="width:100%; justify-content:center; margin-top:20px;" id="toPaymentBtn">Continue to Payment</button>
+        </aside>
+      </div>
+    </div>
+
+    <!-- STEP 2: PAYMENT -->
+    <div class="checkout-panel" id="panel-2" style="display:none;">
+      <div class="checkout-grid">
+        <div>
+          <h2 style="font-size:1.5rem; margin-bottom:8px;">Payment details</h2>
+          <p style="color:var(--ivory-dim); font-size:0.88rem; margin-bottom:28px;">This is a demo payment form. No card network is contacted and nothing is charged — do not enter a real card number.</p>
+
+          <form id="paymentForm">
+            <div class="form-field">
+              <label for="cardName">Name on card</label>
+              <input type="text" id="cardName" required placeholder="As it appears on the card">
+            </div>
+            <div class="form-field">
+              <label for="cardNumber">Card number</label>
+              <div class="card-number-wrap">
+                <input type="text" id="cardNumber" inputmode="numeric" required placeholder="0000 0000 0000 0000" maxlength="19">
+                <svg class="card-icon" width="34" height="22" viewBox="0 0 34 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <rect x="0.5" y="0.5" width="33" height="21" rx="3" stroke="var(--brass)"/>
+                  <rect x="0.5" y="5" width="33" height="4" fill="var(--brass)" opacity="0.5"/>
+                </svg>
+              </div>
+            </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+              <div class="form-field">
+                <label for="cardExpiry">Expiry</label>
+                <input type="text" id="cardExpiry" inputmode="numeric" required placeholder="MM/YY" maxlength="5">
+              </div>
+              <div class="form-field">
+                <label for="cardCvv">CVV</label>
+                <input type="text" id="cardCvv" inputmode="numeric" required placeholder="123" maxlength="3">
+              </div>
+            </div>
+            <div class="form-field">
+              <label for="waNumber">WhatsApp number for your confirmation</label>
+              <input type="tel" id="waNumber" required placeholder="e.g. 082 123 4567">
+            </div>
+            <p id="paymentError" class="payment-error" style="display:none;"></p>
+            <div style="display:flex; gap:14px; margin-top:8px;">
+              <button type="button" class="btn btn-outline" id="backToReview">Back</button>
+              <button type="submit" class="btn btn-primary" id="payBtn" style="flex:1; justify-content:center;">
+                <span id="payBtnLabel">Pay <span id="payAmount"></span></span>
+              </button>
+            </div>
+          </form>
+        </div>
+        <aside class="checkout-summary">
+          <h3 style="font-size:1.1rem; margin-bottom:18px;">Order total</h3>
+          <div class="summary-row summary-total"><span>Total</span><span id="summaryTotal2">R0.00</span></div>
+          <p class="cart-note" style="margin-top:16px;">Demo mode: any 16-digit number and a future expiry date will be accepted. No payment is actually processed.</p>
+        </aside>
+      </div>
+    </div>
+
+    <!-- STEP 3: CONFIRMATION -->
+    <div class="checkout-panel" id="panel-3" style="display:none;">
+      <div class="confirmation-box">
+        <div class="confirmation-icon">&#10003;</div>
+        <span class="eyebrow">Demo payment successful</span>
+        <h2 style="margin-top:14px; font-size:1.9rem;">Thank you — order placed.</h2>
+        <p style="color:var(--ivory-dim); margin-top:12px; max-width:48ch;">
+          Order <strong id="orderId" style="color:var(--ivory);"></strong> has been recorded for this session.
+          No real payment was taken. To confirm this order with Makhosi directly, send the
+          summary below over WhatsApp.
+        </p>
+        <button class="btn btn-primary" id="sendWhatsAppBtn" style="margin-top:28px;">Send order confirmation via WhatsApp</button>
+        <a href="products.html" class="btn btn-outline" style="margin-top:14px;">Continue shopping</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-row">
+    <p>&copy; <span id="year"></span> Makhosi Shabangu Traditional Healing. All rights reserved.</p>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#contact">Booking</a>
+      <a href="https://wa.me/27000000000">WhatsApp</a>
+    </div>
+  </div>
+</footer>
+
+<script src="js/cart.js"></script>
+<script src="js/checkout.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
