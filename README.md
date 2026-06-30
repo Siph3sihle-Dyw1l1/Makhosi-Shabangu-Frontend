@@ -1,6 +1,6 @@
 # Makhosi Shabangu — Traditional Healing & Wellness
 
-**Live site:** [PASTE LINK HERE]
+**Live site:** [https://siph3sihle-dyw1l1.github.io/Makhosi-Shabangu-Frontend/]
 
 ![Landing page preview](images/landing_page.png)
 
