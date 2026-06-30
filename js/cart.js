@@ -11,7 +11,7 @@ const PRODUCTS = [
     category: "incense",
     price: 85,
     blurb: "Dried imphepho for cleansing and connecting with ancestors before consultation or ritual.",
-    image: "images/product-imphepho.svg"
+    image: "images/product_imphepho.avif"
   },
   {
     id: "herbal-mix",
@@ -19,7 +19,7 @@ const PRODUCTS = [
     category: "herbal",
     price: 220,
     blurb: "A hand-blended mixture prepared after consultation, tailored to general wellness support.",
-    image: "images/product-herbal-mix.svg"
+    image: "images/product-herbal-mix.webp"
   },
   {
     id: "ubulawu",
@@ -27,7 +27,7 @@ const PRODUCTS = [
     category: "ritual",
     price: 180,
     blurb: "Traditional root preparation used in ceremony and spiritual strengthening practices.",
-    image: "images/product-ubulawu.svg"
+    image: "images/product-ubulawu.jpg"
   },
   {
     id: "candle",
@@ -35,7 +35,7 @@ const PRODUCTS = [
     category: "ritual",
     price: 95,
     blurb: "Slow-burning candle prepared for use during prayer, reflection, or home cleansing.",
-    image: "images/product-candle.svg"
+    image: "images/product-candle.webp"
   },
   {
     id: "bracelet",
@@ -43,7 +43,7 @@ const PRODUCTS = [
     category: "adornment",
     price: 150,
     blurb: "Hand-beaded wrist band, made to order in colours appropriate to your consultation.",
-    image: "images/product-bracelet.svg"
+    image: "images/product-bracelet.webp"
   },
   {
     id: "giftset",
@@ -51,7 +51,7 @@ const PRODUCTS = [
     category: "herbal",
     price: 350,
     blurb: "A curated starter set for those new to consultation — imphepho, candle, and herbal mix.",
-    image: "images/product-giftset.svg"
+    image: "images/product-giftset.png"
   }
 ];
 
