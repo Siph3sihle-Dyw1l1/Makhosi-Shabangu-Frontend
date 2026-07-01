@@ -2,7 +2,7 @@
 
 **Live site:** [https://siph3sihle-dyw1l1.github.io/Makhosi-Shabangu-Frontend/]
 
-![Landing page preview](images/)
+![Landing page preview](https://github.com/Siph3sihle-Dyw1l1/Makhosi-Shabangu-Frontend/blob/main/images/landing_page.png)
 
 ## About
 
